@@ -1,0 +1,8 @@
+language: ruby
+rvm:
+  - 2.2.5
+before_install:
+  - gem install bundler --pre
+install:
+  - bundle install
+  - rake db:create:all
