@@ -23,7 +23,7 @@ RSpec.describe Contact, type: :model do
   end
 
   it "is invalid if message size < 1 character" do
-    contact = FactoryGirl.build(:contact)
-    expect(contact.message.size).to eq(4)
+    contact = FactoryGirl.build(:contact, message: "")
+    expect(contact.message.size).not_to be < 1
   end
 end
